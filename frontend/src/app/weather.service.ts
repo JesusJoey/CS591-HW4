@@ -5,14 +5,20 @@ import { HttpClient } from '@angular/common/http';
 export class WeatherService {
 
   zipcode = '1000';
+  API_URL = 'http://localhost:4000/api';
 
-  API_URL = 'http://localhost:8000';
-
-  constructor( private httpClient: HttpClient ) { }
+  constructor( private http: HttpClient ) { }
 
   getWeather() {
-  	return this.httpClient.get(`${this.API_URL}/api/weather/${this.zipcode}`);
+    return this.http.get(`${this.API_URL}/${this.zipcode}`);
   }
-  
+  getZipcode (): Observable<zipcode> {
+    return this.http.get<zipcode>(this.zipcode);
+  }
+
+  setZipcode(zipcode) {
+    this.zipcode = zipcode;
+    console.log(zipcode);
+  }
 
 }

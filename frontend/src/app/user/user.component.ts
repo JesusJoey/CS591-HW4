@@ -10,8 +10,7 @@ import { WeatherService } from '../weather.service';
 export class UserComponent implements OnInit {
 
   user = {
-  	name: 'Joey,
-  	zipcode: '1000'
+    name: 'Joey', city: 'A', zipcode: '1000'
   };
 
   Zipcode = this.user.zipcode;

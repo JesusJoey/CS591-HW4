@@ -1,24 +1,15 @@
 const createError = require('http-errors');
 const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-
 const bodyParser=require('body-parser')
 const server = express();
 
-server.listen(3001,function(){
+server.listen(4000,function(){
   console.log('Success!')
 });
 
+server.use('/api', indexRouter);
 
-server.use('/hw4', indexRouter);
-server.use('/users', usersRouter);
-
-// catch 404 and forward to error handler
 server.use(function(req, res, next) {
   next(createError(404));
 });

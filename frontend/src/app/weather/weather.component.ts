@@ -16,11 +16,12 @@ export class WeatherComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-  	this.display();
+    this.display();
+    this.weatherService.getZipcode();
   }
 
   display() {
-  	this.weatherService.getWeather()
+    this.weatherService.getWeather()
       .subscribe(data => {this.data = data; console.log(data)});
   }
 

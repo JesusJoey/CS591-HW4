@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'weather', component: WeatherComponent }
 ];
 
-let ngModule = NgModule({
+const ngModule = NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]
 });
